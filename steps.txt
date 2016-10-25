@@ -1,0 +1,19 @@
+commands :
+////////////////////////
+.........................
+npm init :
+after this command package.json wil appear
+..........................
+npm install bower --save-dev
+check package.json > bower should be add to dev
+dependencies .
+dev dependencies ??
+(npm install -g bower) vs (npm install bower --save-dev)
+......................
+mkdir app 
+cd app
+bower init
+now in app we will find bower.json 
+...............
+bower install angular --save
+
