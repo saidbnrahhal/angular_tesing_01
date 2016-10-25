@@ -1,16 +1,22 @@
 //jasmine
 describe('Testing AngularJS Test Suite',function(){
 
+	beforeEach(module('testingAngularApp'));
+
 	describe('Testing AngularJS Controller',function(){
 
-		it('should initialize the title int the scope',function(){
-			module('testingAngularApp');
+		var scope , ctrl ;			
 
-			var scope={};
-			var ctrl ;
-			inject(function($controller){
+		beforeEach(inject(function($controller,$rootScope){
+				scope =$rootScope.$new();
 				ctrl=$controller('testingAngularCtrl',{$scope:scope});
-			});
+			}));
+
+		afterEach(function(){
+			//Cleanup code
+		});
+
+		it('should initialize the title int the scope',function(){
 
 			expect(scope.title).toBeDefined();
 			expect(scope.title).toBe("Testing AngularJS  Application");
