@@ -1,3 +1,4 @@
+
 commands :
 ////////////////////////
 .........................
@@ -16,4 +17,80 @@ bower init
 now in app we will find bower.json 
 ...............
 bower install angular --save
-
+it has to do with the depolyement
+...........................
+>cd ../..
+>npm install karma-cli phantomjs -g
+we will installe karma and phantomjs in way to be available 
+trow the command lin
+>phantomjs --version
+$2.1.1
+worked greate
+>karma --version
+asked me to do 
+>npm install karma --save-dev
+>karma --version
+$Karma version: 1.3.0
+...................
+with npm install ... -g you will benefit from the command in all your environment
+with npm install karma --save-dev it's only in your project and it will aprear in 
+package.json
+......................
+>cd angular 
+>npm install karma jasmine --save-dev
+>cat package.json
+${
+  "name": "angular",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "jasmine": "^2.5.2",
+    "karma": "^1.3.0"
+  }
+}
+>
+...........................
+>cd app 
+>bower install angular-mocks --save
+>cat bower.js
+${
+  "name": "app",
+  "authors": [
+    "rahhal <saidbnrahhal@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8"
+  }
+}
+........................
+>mkdir -p js/test/unit
+>cd js/test
+>karma init
+>vi karma.conf.js
+files: [
+        '../../bower_components/angular/angular.js',
+        '../../bower_components/angular-mocks/angular-mocks.js',
+        '../app.js',
+        'unit/*.js'
+    ],
+.......................
+>karma start karma.conf.js
